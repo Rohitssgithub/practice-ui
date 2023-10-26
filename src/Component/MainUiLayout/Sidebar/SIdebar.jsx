@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import './Sidebar.css'
 import { Link, useLocation } from "react-router-dom";
-
+import { PATH } from "../Constant";
 
 const Sidebar = () => {
+
+    console.log('PATH', PATH)
+
+    let data = Object.values(PATH).map((ele)=>{
+        return ele.path
+    });
+    console.log('data', data)
     const [isOpen, setIsopen] = useState(false);
     const location = useLocation();
 
@@ -23,7 +30,7 @@ const Sidebar = () => {
                                 <i className="fa fa-bars"></i>
                             </div>
                         </div>
-                        <a className="navbar-brand text-primary mr-0">Home</a>
+                        <a className="navbar-brand text-primary mr-0">{location.pathname === '/' ? "Home" : location.pathname}</a>
                     </div>
                 </nav>
                 <div className={`sidebars ${isOpen == true ? 'active' : ''}`}>
@@ -33,9 +40,13 @@ const Sidebar = () => {
                     </div>
                     <div className="sd-body">
                         <ul>
-                            <Link className='' to='/'><i className="fa-solid fa-house"></i><p>Home</p></Link>
-                            <Link className='' to='/about'><i className="fa-solid fa-address-card"></i><p>About</p></Link>
-                            <Link className='' to='/home'><i className="fa-solid fa-right-from-bracket"></i><p>Logout</p></Link>
+                            {
+                                Object.values(PATH).map((ele)=>{
+                                    return (
+                                        <Link  className='mainLinkNav' to={ele.path}>{ele.pageName}</Link>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </div>

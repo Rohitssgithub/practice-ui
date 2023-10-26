@@ -7,7 +7,9 @@ const MainUiLayout = () => {
         <>
             <div>
                 <Sidebar></Sidebar>
-                <Outlet />
+                <div className='container-fluid'>
+                    <Outlet />
+                </div>
             </div>
         </>
     )

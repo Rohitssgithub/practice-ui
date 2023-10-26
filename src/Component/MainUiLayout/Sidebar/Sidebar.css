@@ -78,3 +78,17 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
+
+.mainLinkNav{
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    height: 56px;
+    width: 100%;
+    font-family: "Poppins";
+    font-size: 17px;
+    padding: 20px;
+    text-transform: capitalize;
+    line-height: 1;
+    border-radius: 8px;
+}
