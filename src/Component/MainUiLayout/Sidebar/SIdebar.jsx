@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, memo } from "react";
 import './Sidebar.css'
 import { Link, useLocation } from "react-router-dom";
 import { PATH } from "../Constant";
 
 const Sidebar = () => {
+    const [currentPath, setCurrentPath] = useState({});
 
-    console.log('PATH', PATH)
+    console.log('currentPath', currentPath)
 
-    let data = Object.values(PATH).map((ele)=>{
+    let data = Object.values(PATH).map((ele) => {
         return ele.path
     });
     console.log('data', data)
@@ -20,6 +21,18 @@ const Sidebar = () => {
     useEffect(() => {
         setIsopen(false);
     }, [location.pathname]);
+
+    const pageName = useMemo(() => {
+        // let temp = {}
+        // Object.values(PATH).filter(x => x.private).forEach(portal => {
+        //     const obj = Object.values(portal.children).find(pathData => pathData.path === location.pathname)
+        //     console.log('obj', obj)
+        //     if (obj)
+        //         temp = obj
+        // })
+        // setCurrentPath(temp)
+        // return (temp?.pageName || "")
+    }, [location]);
     return (
         <>
             <div className="container-fluid mt-3">
@@ -30,7 +43,14 @@ const Sidebar = () => {
                                 <i className="fa fa-bars"></i>
                             </div>
                         </div>
-                        <a className="navbar-brand text-primary mr-0">{location.pathname === '/' ? "Home" : location.pathname}</a>
+                        <p className="navbar-brand text-primary mr-0">{pageName}</p>
+                        {/* {
+                            Object.values(PATH).map((ele) => {
+                                return (
+                                    <p className="navbar-brand text-primary mr-0">{ele.pageName}</p>
+                                )
+                            })
+                        } */}
                     </div>
                 </nav>
                 <div className={`sidebars ${isOpen == true ? 'active' : ''}`}>
@@ -41,9 +61,9 @@ const Sidebar = () => {
                     <div className="sd-body">
                         <ul>
                             {
-                                Object.values(PATH).map((ele)=>{
+                                Object.values(PATH).map((ele) => {
                                     return (
-                                        <Link  className='mainLinkNav' to={ele.path}>{ele.pageName}</Link>
+                                        <Link className='mainLinkNav' to={ele.path}>{ele.pageName}</Link>
                                     )
                                 })
                             }
