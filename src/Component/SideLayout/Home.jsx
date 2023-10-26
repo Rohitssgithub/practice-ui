@@ -1,11 +1,11 @@
 import React from 'react';
-import Accordin from '../Accordin/Accordin';
+// import Accordin from '../Accordin/Accordin';
 
 const Home = () => {
   return (
     <>
       Home
-      <Accordin></Accordin>
+      {/* <Accordin><a/Accordin> */}
     </>
   )
 }

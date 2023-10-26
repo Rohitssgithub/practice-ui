@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 const Navbar = ({ increaseLengthFun, open }) => {
     return (
         <>
@@ -17,9 +18,9 @@ const Navbar = ({ increaseLengthFun, open }) => {
                 </div>
                 <nav>
                     <ul>
-                        <li className='linkNav'><i className="fa-solid fa-house"></i><p>Home</p></li>
-                        <li className='linkNav'><i className="fa-solid fa-address-card"></i><p>About</p></li>
-                        <li className='linkNav'><i className="fa-solid fa-right-from-bracket"></i><p>Logout</p></li>
+                        <Link className='linkNav'><i className="fa-solid fa-house"></i><p>Home</p></Link>
+                        <Link className='linkNav'><i className="fa-solid fa-address-card"></i><p>About</p></Link>
+                        <Link className='linkNav'><i className="fa-solid fa-right-from-bracket"></i><p>Logout</p></Link>
                     </ul>
                 </nav>
             </div>

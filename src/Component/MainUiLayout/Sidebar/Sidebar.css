@@ -18,7 +18,7 @@ body {
 .navbar{
   border-radius: 5px;
 }
-.sidebar{
+.sidebars{
     width: 280px;
     min-height: 100vh;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
@@ -29,7 +29,7 @@ body {
     z-index: 1;
     transition: 0.5s;
 }
-.sidebar.active{
+.sidebars.active{
     left: 0;
 }
 .sd-header{

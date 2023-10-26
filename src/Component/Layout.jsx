@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import SideLayout from './SideLayout/SideLayout'
 import Navbar from './Navbar/Navbar'
 import './Navbar/Navbar.css'
+import { Outlet } from 'react-router-dom';
+
 
 const Layout = () => {
     const [open, setOpen] = useState(false)
@@ -15,7 +17,8 @@ const Layout = () => {
 
             <div className='mainConatiner'>
                 <Navbar increaseLengthFun={increaseLengthFun} open={open}></Navbar>
-                <SideLayout open={open}></SideLayout>
+                <SideLayout open={open}>
+                </SideLayout>
             </div>
         </>
     )
