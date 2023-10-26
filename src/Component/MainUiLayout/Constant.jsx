@@ -1,10 +1,3 @@
-// import UserList from "../Component/UserList/UserList"
-// import UserProfile from '../Component/User/UserProfile'
-// import AdminList from "../Component/Admin/AdminList"
-// import Admin from '../Component/Admin/Admin'
-// import Home from "../Pages/Home/Home"
-// import Formiks from "../Component/Formik/Formik"
-// import TabForm from "../Component/TabForm/TabForm"
 export const PORTALS_NAMES = {
     "ADMIN": "admin",
     "USER": "user",
@@ -32,8 +25,4 @@ export const PATH = {
         path: '/profile',
         pageName: "Profile",
     },
-
-
-
-
 }
