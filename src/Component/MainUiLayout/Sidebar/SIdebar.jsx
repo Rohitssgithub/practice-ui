@@ -23,15 +23,6 @@ const Sidebar = () => {
     }, [location.pathname]);
 
     const pageName = useMemo(() => {
-        // let temp = {}
-        // Object.values(PATH).filter(x => x.private).forEach(portal => {
-        //     const obj = Object.values(portal.children).find(pathData => pathData.path === location.pathname)
-        //     console.log('obj', obj)
-        //     if (obj)
-        //         temp = obj
-        // })
-        // setCurrentPath(temp)
-        // return (temp?.pageName || "")
     }, [location]);
     return (
         <>
@@ -44,13 +35,6 @@ const Sidebar = () => {
                             </div>
                         </div>
                         <p className="navbar-brand text-primary mr-0">{pageName}</p>
-                        {/* {
-                            Object.values(PATH).map((ele) => {
-                                return (
-                                    <p className="navbar-brand text-primary mr-0">{ele.pageName}</p>
-                                )
-                            })
-                        } */}
                     </div>
                 </nav>
                 <div className={`sidebars ${isOpen == true ? 'active' : ''}`}>
