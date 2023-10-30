@@ -1,0 +1,157 @@
+input{
+  box-shadow: none !important;
+}
+button{
+    box-shadow: none !important;
+}
+// *:focus{
+//     outline: none;
+// }
+.mainLoginDiv{
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    color: white;
+    width: 100% !important;
+    height: 80px;
+    font-size: 14px;
+    
+    input{
+      width: 100%;
+       padding: 10px; 
+       border-radius: 5px;
+    }
+
+    .errorMessage{
+      color: red;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+}
+.needDiv{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+
+    span{
+        cursor: pointer;
+    }
+}
+.btnDiv{
+margin-top: 20px;
+}
+
+/* Default button style */
+.rotate_border {
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: #4F95DA;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+    position: relative;
+    border: none !important;
+
+  }
+  
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+  }
+  
+  .btn:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+  }
+  
+  .btn:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  .btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+
+  .otpReceiver{
+    text-align: center;
+    color: #fff;
+  }
+
+.otp_field {
+    flex-direction: row;
+    column-gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .otp_field input {
+    height: 45px;
+    width: 42px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1.125rem;
+    text-align: center; 
+    border: 1px solid skyblue;
+  }
+  .otp_field input:focus {
+    outline: rgb(184, 125, 125) solid 1px;
+  }
+  .otp_field input::-webkit-inner-spin-button,
+  .otp_field input::-webkit-outer-spin-button {
+    display: none;
+  }
+  
+  .resend {
+    font-size: 12px;
+  }
+  
+  .passInput{
+    position: relative;
+  }
+  .eyeSpan{
+    position: absolute;
+    top: 25px;
+    font-size: 22px;
+    right: 15px;
+    color: black;
+  }
+  .emailInput{
+    width: 100%;
+       padding: 10px; 
+       border-radius: 5px;
+       border: solid 1px skyblue;
+  }
+
+  .emailSenderDiv{
+    color: white;
+  }

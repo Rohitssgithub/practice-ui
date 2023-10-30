@@ -5,8 +5,9 @@ import { PATH } from "../Constant";
 
 const Sidebar = () => {
     const [currentPath, setCurrentPath] = useState({});
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    console.log('currentPath', currentPath)
+
 
     let data = Object.values(PATH).map((ele) => {
         return ele.path
@@ -15,15 +16,29 @@ const Sidebar = () => {
     const [isOpen, setIsopen] = useState(false);
     const location = useLocation();
 
+
+
+
+    useEffect(() => {
+        console.log('login')
+        const token = getToken();
+        setIsLoggedIn(!!token);
+    }, []);
+
+    const getToken = () => {
+        const userDataString = localStorage.getItem('userData');
+        let userData = JSON.parse(userDataString);
+        return userData?.token;
+    }
+
     const ToggleSidebar = () => {
         setIsopen(!isOpen);
     }
     useEffect(() => {
         setIsopen(false);
-    }, [location.pathname]);
+    }, [location.pathname, getToken()]);
 
-    const pageName = useMemo(() => {
-    }, [location]);
+
     return (
         <>
             <div className="container-fluid mt-3">
@@ -34,7 +49,6 @@ const Sidebar = () => {
                                 <i className="fa fa-bars"></i>
                             </div>
                         </div>
-                        <p className="navbar-brand text-primary mr-0">{pageName}</p>
                     </div>
                 </nav>
                 <div className={`sidebars ${isOpen == true ? 'active' : ''}`}>
@@ -51,6 +65,7 @@ const Sidebar = () => {
                                     )
                                 })
                             }
+                            <Link className='mainLinkNav' onClick={() => localStorage.clear()} to='/'>Logout</Link>
                         </ul>
                     </div>
                 </div>
