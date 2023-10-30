@@ -1,13 +1,3 @@
-export const PORTALS_NAMES = {
-    "ADMIN": "admin",
-    "USER": "user",
-}
-
-// portals paths
-export const PORTALS = {
-    [PORTALS_NAMES["ADMIN"]]: "/admin",
-}
-
 export const PATH = {
     HOME: {
         path: '/',
